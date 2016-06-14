@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://www.raspberrypi.org/forums/viewtopic.php?t=19707 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="">
+<meta name="viewport" content="width=device-width">
+
+
+<title>Raspberry Pi • View topic - How to detect shutdown</title>
+
+<link rel="shortcut icon" href="https://www.raspberrypi.org/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="https://www.raspberrypi.org/favicon.ico" type="image/x-ico">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+
+<link rel="stylesheet" type="text/css" media="all" href="./Raspberry Pi • View topic - How to detect shutdown_files/style.css">
+<link rel="stylesheet" type="text/css" href="./Raspberry Pi • View topic - How to detect shutdown_files/custom.css">
+<link rel="stylesheet" type="text/css" href="./Raspberry Pi • View topic - How to detect shutdown_files/bootstrap-raspi.css">
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="./styles/raspite/theme/css/ie7.css">
+<![endif]-->
+<link href="./Raspberry Pi • View topic - How to detect shutdown_files/css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="./styles/raspite/theme/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="pingback" href="">
+
+<link rel="alternate" type="application/atom+xml" title="Feed - Raspberry Pi" href="http://www.raspberrypi.org/forums/feed.php"><link rel="alternate" type="application/atom+xml" title="Feed - New Topics" href="http://www.raspberrypi.org/forums/feed.php?mode=topics"><link rel="alternate" type="application/atom+xml" title="Feed - Forum - Interfacing (DSI, CSI, I2C, etc.)" href="http://www.raspberrypi.org/forums/feed.php?f=44"><link rel="alternate" type="application/atom+xml" title="Feed - Topic - How to detect shutdown" href="http://www.raspberrypi.org/forums/feed.php?f=44&amp;t=19707">
+
+
+<script async="" src="./Raspberry Pi • View topic - How to detect shutdown_files/analytics.js"></script><script type="text/javascript">
+// <![CDATA[
+	var jump_page = 'Enter the page number you wish to go to:';
+	var on_page = '1';
+	var per_page = '';
+	var base_url = '';
+	var style_cookie = 'phpBBstyle';
+	var style_cookie_settings = '; path=/; domain=.raspberrypi.org';
+	var onload_functions = new Array();
+	var onunload_functions = new Array();
+
+	
+
+	/**
+	* Find a member
+	*/
+	function find_username(url)
+	{
+		popup(url, 760, 570, '_usersearch');
+		return false;
+	}
+
+	/**
+	* New function for handling multiple calls to window.onload and window.unload by pentapenguin
+	*/
+	window.onload = function()
+	{
+		for (var i = 0; i < onload_functions.length; i++)
+		{
+			eval(onload_functions[i]);
+		}
+	};
+
+	window.onunload = function()
+	{
+		for (var i = 0; i < onunload_functions.length; i++)
+		{
+			eval(onunload_functions[i]);
+		}
+	};
+
+// ]]>
+</script>
+<link href="./Raspberry Pi • View topic - How to detect shutdown_files/stylesheet.css" rel="stylesheet" type="text/css" media="screen, projection">
+
+
+
+</head>
+
+<body>
+<a name="top"></a>
+
+<header class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<!-- Cross-site Navigation -->
+
+		<nav class="container" role="navigation">
+			<h3 class="assistive-text">Main menu</h3>
+
+			<div class="skip-link"><a class="assistive-text" href="https://www.raspberrypi.org/forums/viewtopic.php?t=19707#content" title="Skip to primary content">Skip to primary content</a></div>
+
+		  <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=19707#" class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse">
+            <i class="icon-bar"></i>
+            <i class="icon-bar"></i>
+            <i class="icon-bar"></i>
+          </a>
+
+			<div class="nav-collapse">
+				<div class="nav pull-right">
+
+					<ul id="menu-test-menu" class="nav">
+						<li id="menu-item-1862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1862"><a href="https://www.raspberrypi.org/quick-start-guide">Quick Start</a></li>
+						<li id="menu-item-1864" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1864"><a href="https://www.raspberrypi.org/downloads">Downloads</a></li>
+						<li id="menu-item-1870" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1870"><a href="https://www.raspberrypi.com/" onclick="javascript:_gaq.push([&#39;_trackEvent&#39;,&#39;outbound-menu&#39;,&#39;//www.raspberrypi.com&#39;]);">Buy Codecs</a></li>
+						<li id="menu-item-1867" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1867"><a href="https://www.raspberrypi.org/phpBB3">Forum</a></li>
+						<li id="menu-item-1869" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1869"><a href="https://www.raspberrypi.org/faqs">FAQs</a></li>
+						<li id="menu-item-1861" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1861 dropdown"><a href="https://www.raspberrypi.org/forums/viewtopic.php?t=19707#" data-toggle="dropdown" data-target="#" class="dropdown-toggle">About <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li id="menu-item-1865" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1865"><a href="https://www.raspberrypi.org/about">About us</a></li>
+								<li id="menu-item-1866" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1866"><a href="https://www.raspberrypi.org/contact-us">Contact us</a></li>
+								<li id="menu-item-4662" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4662"><a href="https://www.raspberrypi.org/technical-help-and-resource-documents">Technical, help and resource documents</a></li>
+								<li id="menu-item-1863" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1863"><a href="https://www.raspberrypi.org/trademark-rules">Trademark rules</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<a class="nav-logo" href="https://www.raspberrypi.org/" title="Raspberry Pi" rel="home">Raspberry Pi</a>
+		</nav>
+
+
+
+	</div>
+</header>
+
+<div class="container">
+	
+	<div class="row-fluid searchbar">
+		<div class="span6">
+		<a href="https://www.raspberrypi.org/forums/faq.php" title="Frequently Asked Questions">FAQ</a>
+		<a href="https://www.raspberrypi.org/forums/ucp.php?mode=register">Register</a>
+			<a href="https://www.raspberrypi.org/forums/ucp.php?mode=login" title="Login" accesskey="x">Login</a>
+			
+		</div>
+		<div class="span6 text-right">
+			
+			<form action="https://www.raspberrypi.org/forums/search.php" method="get" id="search" class="form-search" style="display:inline-block; *display:inline; zoom:1;">
+				<input name="keywords" id="keywords" type="text" maxlength="128" title="Search for keywords" class="search-query input-small" value="Search…" onclick="if(this.value==&#39;Search…&#39;)this.value=&#39;&#39;;" onblur="if(this.value==&#39;&#39;)this.value=&#39;Search…&#39;;">
+				<button class="btn" value="Search" type="submit" title="Search"><i class="icon icon-search"></i></button>
+				
+			</form>
+		
+		</div>
+	</div>
+	
+</div>
+
+<a name="content"></a>
+<div class="container" role="main">
+
+<div class="row-fluid">
+	<div class="span9">
+		<h2>How to detect shutdown</h2>
+		
+		<!-- ICONS! -->
+			
+	</div>
+
+</div>
+
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body -->
+
+<br>
+<div class="row-fluid">
+	<div class="topic-actions span8">
+	
+		<a href="https://www.raspberrypi.org/forums/posting.php?mode=reply&amp;f=44&amp;t=19707" class="btn btn-info" title="Post a reply">Post a reply</a> 
+	&nbsp;</div>
+	
+	
+	<div class="paging span4 text-right">
+		9 posts
+		
+	</div>
+	
+	
+</div>
+	<div id="p191775" class="post row-fluid even">
+	
+		<div class="postbody span9">
+			
+
+			<div class="author">by <strong><a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=15114">pjc123</a></strong> » Thu Oct 11, 2012 2:33 am </div>
+
+			
+
+			<div class="content">I have a headless pi and I need a way to perform a clean shutdown in the event that I lose wifi access to the pi, something in the OS or one of my programs locks up the pi, or maybe I just don't have remote access at all and need to shut it down.  So I am going to wire a momentary switch to one of the GPIO ports to enable a clean shutdown using a loop that looks at the status of the switch and then issues a shutdown command when it goes to low.  I am also wiring a toggle switch to the 5v line so I can turn the pi power off after the clean shutdown and then on again to boot it up again. Note that I could just do a reboot with only a momentary switch, but I also want the capability to just turn the pi completely off.  Anyway, this is all easily doable.<br><br>My problem is that the pi will be enclosed in a sealed box and will not be visible, so I have no way of telling if the pi is shutdown, and that it is safe to reset it with the toggle switch (I can't look at the on-board LED's).  I was hoping to wire a led from either the 3.3v or the 5v GPIO pins to the front panel of the chassis, but the pi does not really shutdown like a x86 Linux computer does, meaning that all the power rails are still active after a shutdown.<br><br>So, any ideas on how I can detect that it has shutdown in such a situation?</div>
+
+			<div id="sig191775" class="signature">My Raspberry Pi Project Page:<br>http://www.flaminghellmet.com/launch/</div>
+
+		</div>
+
+		
+		<dl class="postprofile span3" id="profile191775">
+			<dt>
+				
+			</dt>
+		<dd><strong>Posts:</strong> 911</dd><dd><strong>Joined:</strong> Thu Mar 29, 2012 3:37 pm</dd>
+
+		</dl>
+	
+
+	
+	</div>
+
+
+	<div id="p191797" class="post row-fluid odd">
+	
+		<div class="postbody span9">
+			
+
+			<div class="author">by <strong><a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=31347">Dweeber</a></strong> » Thu Oct 11, 2012 4:52 am </div>
+
+			
+
+			<div class="content">You can detect when the RPi is "off" by watching the UART TX pin which stops sending 3.3v the RPI is in shutdown mode.<br><br>Article on how someone made a circuit to detect it and make use of it...<br><br><a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?f=44&amp;t=13268&amp;p=185458&amp;hilit=UART+TX#p185458" class="postlink">http://www.raspberrypi.org/phpBB3/viewtopic.php?f=44&amp;t=13268&amp;p=185458&amp;hilit=UART+TX#p185458</a><br>Another Article:<br><a href="http://www.boeeerb.co.uk/pitx-an-atx-style-solution-for-the-pi/" class="postlink">http://www.boeeerb.co.uk/pitx-an-atx-style-solution-for-the-pi/</a></div>
+
+			<div id="sig191797" class="signature"><span style="font-size: 95%; line-height: 116%;">Dweeber A.K.A. Kevin...<br><span style="font-weight: bold">My RPI Info Pages including Current Setup</span> - http://rpi.tnet.com</span></div>
+
+		</div>
+
+		
+		<dl class="postprofile span3" id="profile191797">
+			<dt>
+				<a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=31347"><img src="./Raspberry Pi • View topic - How to detect shutdown_files/file.php" width="84" height="89" alt="User avatar"></a><br>
+				
+			</dt>
+		<dd><strong>Posts:</strong> 606</dd><dd><strong>Joined:</strong> Fri Aug 17, 2012 3:35 am</dd><dd><strong>Location:</strong> Mesa, AZ</dd>
+			<dd>
+				<ul class="profile-icons">
+					<li class="email-icon"><a href="http://ly.tnet.com/V" title="WWW: http://ly.tnet.com/V" class="btn btn-mini"><i class="icon icon-globe"></i></a></li>
+				</ul>
+			</dd>
+		
+
+		</dl>
+	
+
+	
+	</div>
+
+
+	<div id="p191999" class="post row-fluid even">
+	
+		<div class="postbody span9">
+			
+
+			<div class="author">by <strong><a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=15114">pjc123</a></strong> » Thu Oct 11, 2012 11:45 am </div>
+
+			
+
+			<div class="content">Ah, that might do the trick, although I am concerned about the exact point in the shutdown procedure that the led is off; in other words, have the file systems been unmounted before it turns off, because that is my main concern.  If that is true then this would work, as all I would need to do is run an LED from the front panel to the UART TX pin and I am good to go.</div>
+
+			<div id="sig191999" class="signature">My Raspberry Pi Project Page:<br>http://www.flaminghellmet.com/launch/</div>
+
+		</div>
+
+		
+		<dl class="postprofile span3" id="profile191999">
+			<dt>
+				
+			</dt>
+		<dd><strong>Posts:</strong> 911</dd><dd><strong>Joined:</strong> Thu Mar 29, 2012 3:37 pm</dd>
+
+		</dl>
+	
+
+	
+	</div>
+
+
+	<div id="p192006" class="post row-fluid odd">
+	
+		<div class="postbody span9">
+			
+
+			<div class="author">by <strong><a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=31347">Dweeber</a></strong> » Thu Oct 11, 2012 11:53 am </div>
+
+			
+
+			<div class="content">When the 3.3v is missing from UART TX, the RPi is shutdown completely so there is nothing left to sync to the disk it is already down.</div>
+
+			<div id="sig192006" class="signature"><span style="font-size: 95%; line-height: 116%;">Dweeber A.K.A. Kevin...<br><span style="font-weight: bold">My RPI Info Pages including Current Setup</span> - http://rpi.tnet.com</span></div>
+
+		</div>
+
+		
+		<dl class="postprofile span3" id="profile192006">
+			<dt>
+				<a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=31347"><img src="./Raspberry Pi • View topic - How to detect shutdown_files/file.php" width="84" height="89" alt="User avatar"></a><br>
+				
+			</dt>
+		<dd><strong>Posts:</strong> 606</dd><dd><strong>Joined:</strong> Fri Aug 17, 2012 3:35 am</dd><dd><strong>Location:</strong> Mesa, AZ</dd>
+			<dd>
+				<ul class="profile-icons">
+					<li class="email-icon"><a href="http://ly.tnet.com/V" title="WWW: http://ly.tnet.com/V" class="btn btn-mini"><i class="icon icon-globe"></i></a></li>
+				</ul>
+			</dd>
+		
+
+		</dl>
+	
+
+	
+	</div>
+
+
+	<div id="p192114" class="post row-fluid even">
+	
+		<div class="postbody span9">
+			
+
+			<div class="author">by <strong><a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=15114">pjc123</a></strong> » Thu Oct 11, 2012 2:35 pm </div>
+
+			
+
+			<div class="content"><blockquote><div><cite>Dweeber wrote:</cite>When the 3.3v is missing from UART TX, the RPi is shutdown completely so there is nothing left to sync to the disk it is already down.</div></blockquote><br><br>Just tried it out and the filesystems are indeed umounted before the LED goes out.  Fantastic.</div>
+
+			<div id="sig192114" class="signature">My Raspberry Pi Project Page:<br>http://www.flaminghellmet.com/launch/</div>
+
+		</div>
+
+		
+		<dl class="postprofile span3" id="profile192114">
+			<dt>
+				
+			</dt>
+		<dd><strong>Posts:</strong> 911</dd><dd><strong>Joined:</strong> Thu Mar 29, 2012 3:37 pm</dd>
+
+		</dl>
+	
+
+	
+	</div>
+
+
+	<div id="p192132" class="post row-fluid odd">
+	
+		<div class="postbody span9">
+			
+
+			<div class="author">by <strong><a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=36974">ski522</a></strong> » Thu Oct 11, 2012 2:53 pm </div>
+
+			
+
+			<div class="content"><blockquote><div><cite>pjc123 wrote:</cite>I have a headless pi and I need a way to perform a clean shutdown in the event that I lose wifi access to the pi, something in the OS or one of my programs locks up the pi, or maybe I just don't have remote access at all and need to shut it down. </div></blockquote><br><br>You should figure out what's locking up the PI...that's extremely unusual for Linux. In  the 10+ years of using Linux, the only time I've ever had it lock up was due to a physical hardware problem (IE bad disk, bad memory, overheat, etc). Even poorly written apps crashing shouldn't be locking up Linux.</div>
+
+			
+
+		</div>
+
+		
+		<dl class="postprofile span3" id="profile192132">
+			<dt>
+				
+			</dt>
+		<dd><strong>Posts:</strong> 394</dd><dd><strong>Joined:</strong> Sun Sep 30, 2012 2:22 pm</dd>
+
+		</dl>
+	
+
+	
+	</div>
+
+
+	<div id="p192173" class="post row-fluid even">
+	
+		<div class="postbody span9">
+			
+
+			<div class="author">by <strong><a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=15114">pjc123</a></strong> » Thu Oct 11, 2012 3:52 pm </div>
+
+			
+
+			<div class="content"><blockquote><div><cite>ski522 wrote:</cite><blockquote><div><cite>pjc123 wrote:</cite>I have a headless pi and I need a way to perform a clean shutdown in the event that I lose wifi access to the pi, something in the OS or one of my programs locks up the pi, or maybe I just don't have remote access at all and need to shut it down. </div></blockquote><br><br>You should figure out what's locking up the PI...that's extremely unusual for Linux. In  the 10+ years of using Linux, the only time I've ever had it lock up was due to a physical hardware problem (IE bad disk, bad memory, overheat, etc). Even poorly written apps crashing shouldn't be locking up Linux.</div></blockquote><br><br>I was just listing several various scenarios; my pi is not locking up.  I just wanted a way to perform a clean shutdown given my particular setup.</div>
+
+			<div id="sig192173" class="signature">My Raspberry Pi Project Page:<br>http://www.flaminghellmet.com/launch/</div>
+
+		</div>
+
+		
+		<dl class="postprofile span3" id="profile192173">
+			<dt>
+				
+			</dt>
+		<dd><strong>Posts:</strong> 911</dd><dd><strong>Joined:</strong> Thu Mar 29, 2012 3:37 pm</dd>
+
+		</dl>
+	
+
+	
+	</div>
+
+
+	<div id="p192799" class="post row-fluid odd">
+	
+		<div class="postbody span9">
+			
+
+			<div class="author">by <strong><a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=36574">Boeeerb</a></strong> » Fri Oct 12, 2012 2:13 pm </div>
+
+			
+
+			<div class="content">I've used my PiTX on the same SD install and to date it's still running perfectly. The TX pin goes low at the same point as the OK/Act light flashes to indicate it's successfully halted. If your really worried you can add a 3 second timer (will involve more complex circuitry) then cut the power, but as I mentioned I haven't had any corruption problems</div>
+
+			<div id="sig192799" class="signature">Find me on Twitter - @Boeeerb <br>Website - http://www.boeeerb.co.uk</div>
+
+		</div>
+
+		
+		<dl class="postprofile span3" id="profile192799">
+			<dt>
+				<a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=36574"><img src="./Raspberry Pi • View topic - How to detect shutdown_files/file(1).php" width="90" height="90" alt="User avatar"></a><br>
+				
+			</dt>
+		<dd><strong>Posts:</strong> 43</dd><dd><strong>Joined:</strong> Thu Sep 27, 2012 2:40 am</dd>
+			<dd>
+				<ul class="profile-icons">
+					<li class="email-icon"><a href="http://www.boeeerb.co.uk/" title="WWW: http://www.boeeerb.co.uk" class="btn btn-mini"><i class="icon icon-globe"></i></a></li>
+				</ul>
+			</dd>
+		
+
+		</dl>
+	
+
+	
+	</div>
+
+
+	<div id="p192829" class="post row-fluid even">
+	
+		<div class="postbody span9">
+			
+
+			<div class="author">by <strong><a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=28346">jackokring</a></strong> » Fri Oct 12, 2012 2:43 pm </div>
+
+			
+
+			<div class="content">Also the TX may find utility as a TX, and so some little adaptation may be needed for it to work off stop bits only. Otherwise some naughty download may switch off your pi. I'm not sure if UART can be switched off easily. Surely it would be better if the pin 13 difference on each board were hard wired to this function, instead of a more general IO.<br><br>Having said that it would be nice if the I2C came up initialized, but would it really provide an education in version revision and software adaptation?</div>
+
+			<div id="sig192829" class="signature">Pi[NFA]=B256R0USB CL4SD8GB Raspbian Stock.<br>Pi[Work]=A+256 CL4SD8GB Raspbian Stock. <br>My favourite constant 1.65056745028</div>
+
+		</div>
+
+		
+		<dl class="postprofile span3" id="profile192829">
+			<dt>
+				<a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=28346"><img src="./Raspberry Pi • View topic - How to detect shutdown_files/file(2).php" width="64" height="27" alt="User avatar"></a><br>
+				
+			</dt>
+		<dd><strong>Posts:</strong> 813</dd><dd><strong>Joined:</strong> Tue Jul 31, 2012 8:27 am</dd><dd><strong>Location:</strong> London, UK</dd>
+			<dd>
+				<ul class="profile-icons">
+					<li class="icq-icon"><a href="http://www.icq.com/people/247657327/" onclick="popup(this.href, 550, 320); return false;" title="ICQ" class="btn btn-mini">ICQ</a></li>
+				</ul>
+			</dd>
+		
+
+		</dl>
+	
+
+	
+	</div>
+
+
+	<div class="span4 text-right">
+		<form class="form-search" method="get" id="forum-search" action="https://www.raspberrypi.org/forums/search.php">
+		<fieldset>
+			<input class="search-query" type="text" name="keywords" id="search_keywords" size="20" value="Search This Topic" onclick="if (this.value == &#39;Search This Topic&#39;) this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) this.value = &#39;Search This Topic&#39;;">
+			<button class="btn" type="submit" value="Search"><i class="icon icon-search"></i></button>
+			<input type="hidden" name="t" value="19707">
+<input type="hidden" name="sf" value="msgonly">
+
+		</fieldset>
+		</form>
+
+	</div>	
+	
+	</div>
+	
+
+	<hr class="crease">
+	<div class="container">
+
+<div class="row-fluid">
+	<div class="topic-actions span8">
+	
+		<a href="https://www.raspberrypi.org/forums/posting.php?mode=reply&amp;f=44&amp;t=19707" class="btn btn-info" title="Post a reply">Post a reply</a> 
+	&nbsp;</div>
+	
+	
+	<div class="paging span4 text-right">
+		9 posts
+		
+	</div>
+	
+	
+</div>
+<br>
+
+
+<div class="row-fluid">
+	<div class="span4">
+		
+		<a href="https://www.raspberrypi.org/forums/viewforum.php?f=44" class="btn left" accesskey="r">Return to Interfacing (DSI, CSI, I2C, etc.)</a>
+		
+	</div>
+	<div class="span2">
+		&nbsp;
+	</div>
+	<div class="span6 text-right">
+		
+		<form method="post" id="jumpbox" action="https://www.raspberrypi.org/forums/viewforum.php" onsubmit="if(this.f.value == -1){return false;}" class="form-inline">
+
+		
+		<fieldset class="jumpbox">
+		
+		
+			<label for="f" accesskey="j">Jump to: 
+			<select name="f" id="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms[&#39;jumpbox&#39;].submit() }">
+			
+			
+				<option value="-1">Select a forum</option>
+			<option value="-1">------------------</option>
+				<option value="19">Community</option>
+			
+				<option value="63">&nbsp; &nbsp;General discussion</option>
+			
+				<option value="90">&nbsp; &nbsp;Other languages</option>
+			
+				<option value="75">&nbsp; &nbsp;&nbsp; &nbsp;Deutsch</option>
+			
+				<option value="76">&nbsp; &nbsp;&nbsp; &nbsp;Español</option>
+			
+				<option value="65">&nbsp; &nbsp;&nbsp; &nbsp;Français</option>
+			
+				<option value="79">&nbsp; &nbsp;&nbsp; &nbsp;Italiano</option>
+			
+				<option value="88">&nbsp; &nbsp;&nbsp; &nbsp;Nederlands</option>
+			
+				<option value="82">&nbsp; &nbsp;&nbsp; &nbsp;日本語</option>
+			
+				<option value="103">&nbsp; &nbsp;&nbsp; &nbsp;Polski</option>
+			
+				<option value="74">&nbsp; &nbsp;&nbsp; &nbsp;Português</option>
+			
+				<option value="84">&nbsp; &nbsp;&nbsp; &nbsp;Русский</option>
+			
+				<option value="89">&nbsp; &nbsp;&nbsp; &nbsp;Türkçe</option>
+			
+				<option value="57">&nbsp; &nbsp;User groups and events</option>
+			
+				<option value="106">&nbsp; &nbsp;The MagPi</option>
+			
+				<option value="83">&nbsp; &nbsp;The Pi Store</option>
+			
+				<option value="12">Using the Raspberry Pi</option>
+			
+				<option value="91">&nbsp; &nbsp;Beginners</option>
+			
+				<option value="28">&nbsp; &nbsp;Troubleshooting</option>
+			
+				<option value="29">&nbsp; &nbsp;Advanced users</option>
+			
+				<option value="102">&nbsp; &nbsp;Accessibility</option>
+			
+				<option value="17">Education</option>
+			
+				<option value="47">&nbsp; &nbsp;The Staffroom</option>
+			
+				<option value="99">&nbsp; &nbsp;Picademy</option>
+			
+				<option value="49">&nbsp; &nbsp;Teaching and learning resources</option>
+			
+				<option value="113">&nbsp; &nbsp;Code Club</option>
+			
+				<option value="48">&nbsp; &nbsp;Using Raspberry Pi in the classroom</option>
+			
+				<option value="104">&nbsp; &nbsp;Astro Pi</option>
+			
+				<option value="94">&nbsp; &nbsp;Mathematica</option>
+			
+				<option value="111">&nbsp; &nbsp;High Altitude Balloon</option>
+			
+				<option value="112">&nbsp; &nbsp;Weather station</option>
+			
+				<option value="14">Programming</option>
+			
+				<option value="72">&nbsp; &nbsp;Bare metal</option>
+			
+				<option value="33">&nbsp; &nbsp;C/C++</option>
+			
+				<option value="67">&nbsp; &nbsp;Graphics programming</option>
+			
+				<option value="68">&nbsp; &nbsp;&nbsp; &nbsp;OpenGLES</option>
+			
+				<option value="69">&nbsp; &nbsp;&nbsp; &nbsp;OpenVG</option>
+			
+				<option value="70">&nbsp; &nbsp;&nbsp; &nbsp;OpenMAX</option>
+			
+				<option value="81">&nbsp; &nbsp;Java</option>
+			
+				<option value="32">&nbsp; &nbsp;Python</option>
+			
+				<option value="77">&nbsp; &nbsp;Scratch</option>
+			
+				<option value="105">&nbsp; &nbsp;Windows 10 for IoT</option>
+			
+				<option value="95">&nbsp; &nbsp;Wolfram Language</option>
+			
+				<option value="34">&nbsp; &nbsp;Other languages</option>
+			
+				<option value="31">&nbsp; &nbsp;General programming discussion</option>
+			
+				<option value="15">Projects</option>
+			
+				<option value="37">&nbsp; &nbsp;Automation, sensing and robotics</option>
+			
+				<option value="40">&nbsp; &nbsp;Cases</option>
+			
+				<option value="78">&nbsp; &nbsp;Gaming</option>
+			
+				<option value="38">&nbsp; &nbsp;Graphics, sound and multimedia</option>
+			
+				<option value="39">&nbsp; &nbsp;Magazines and books</option>
+			
+				<option value="35">&nbsp; &nbsp;Media centres</option>
+			
+				<option value="36">&nbsp; &nbsp;Networking and servers</option>
+			
+				<option value="41">&nbsp; &nbsp;Other projects</option>
+			
+				<option value="16">Hardware and peripherals</option>
+			
+				<option value="43">&nbsp; &nbsp;Camera board</option>
+			
+				<option value="98">&nbsp; &nbsp;Compute Module</option>
+			
+				<option value="108">&nbsp; &nbsp;Official Foundation Display</option>
+			
+				<option value="45">&nbsp; &nbsp;Add-ons</option>
+			
+				<option value="100">&nbsp; &nbsp;B+ addons</option>
+			
+				<option value="107">&nbsp; &nbsp;Device Tree</option>
+			
+				<option value="44" selected="selected">&nbsp; &nbsp;Interfacing (DSI, CSI, I2C, etc.)</option>
+			
+				<option value="42">&nbsp; &nbsp;Gertboard classic</option>
+			
+				<option value="96">&nbsp; &nbsp;GertDuino</option>
+			
+				<option value="46">&nbsp; &nbsp;Recommended peripherals</option>
+			
+				<option value="18">Operating system distributions</option>
+			
+				<option value="66">&nbsp; &nbsp;Raspbian</option>
+			
+				<option value="53">&nbsp; &nbsp;Arch</option>
+			
+				<option value="51">&nbsp; &nbsp;Pidora / Fedora</option>
+			
+				<option value="55">&nbsp; &nbsp;RISCOS</option>
+			
+				<option value="56">&nbsp; &nbsp;Other</option>
+			
+				<option value="73">&nbsp; &nbsp;&nbsp; &nbsp;Android</option>
+			
+				<option value="50">&nbsp; &nbsp;&nbsp; &nbsp;Debian</option>
+			
+				<option value="85">&nbsp; &nbsp;&nbsp; &nbsp;FreeBSD</option>
+			
+				<option value="54">&nbsp; &nbsp;&nbsp; &nbsp;Gentoo</option>
+			
+				<option value="71">&nbsp; &nbsp;&nbsp; &nbsp;Linux Kernel</option>
+			
+				<option value="86">&nbsp; &nbsp;&nbsp; &nbsp;NetBSD</option>
+			
+				<option value="87">&nbsp; &nbsp;&nbsp; &nbsp;openSUSE</option>
+			
+				<option value="80">&nbsp; &nbsp;&nbsp; &nbsp;Plan 9</option>
+			
+				<option value="52">&nbsp; &nbsp;&nbsp; &nbsp;Puppy</option>
+			
+				<option value="20">Ye Olde Pi Shoppe</option>
+			
+				<option value="93">&nbsp; &nbsp;For sale</option>
+			
+				<option value="61">&nbsp; &nbsp;Wanted</option>
+			
+				<option value="21">Off topic</option>
+			
+				<option value="62">&nbsp; &nbsp;Off topic discussion</option>
+			
+			
+			</select>
+			<input type="submit" value="Go" class="btn">
+			</label>
+		</fieldset>
+		
+		</form>
+		
+	</div>
+</div>
+
+</div>
+<hr class="crease">
+<div class="container">
+
+<div class="row-fluid">
+	<div class="span8">
+		
+		<h5>Who is online</h5>
+		Users browsing this forum: No registered users and 23 guests
+		
+	</div>
+	<div class="span4">
+	&nbsp;
+	</div>
+</div>
+
+</div><!-- #main -->
+
+<footer id="colophon" role="contentinfo" class="wave">
+		<div class="container"><div class="row">
+			<aside class="footer1 span4">
+				<ul class="unstyled">
+					<li><a href="https://www.raspberrypi.org/forums/index.php" accesskey="h"><i class="icon icon-home"></i> Board index</a></li>
+					
+					
+					
+					<li><a href="https://www.raspberrypi.org/forums/memberlist.php?mode=leaders"><i class="icon icon-eye-open"></i> The team</a></li><li><a href="https://www.raspberrypi.org/forums/ucp.php?mode=delete_cookies"><i class="icon icon-trash"></i> Delete all board cookies</a></li>
+					
+					<li><i class="icon icon-time"></i> All times are UTC </li>
+				</ul>
+			</aside>
+				
+			<aside class="footer2 span4">
+				
+			</aside>
+				
+			<aside class="footer3 span4">
+				
+			</aside>
+	
+		</div></div>
+	</footer><!-- #colophon -->
+<!-- #page -->
+
+
+<script type="text/javascript" src="./Raspberry Pi • View topic - How to detect shutdown_files/jquery.js"></script>
+<script type="text/javascript" src="./Raspberry Pi • View topic - How to detect shutdown_files/jquery.timeago.js"></script>
+<script type="text/javascript" src="./Raspberry Pi • View topic - How to detect shutdown_files/forum_fn.js"></script>
+<script type="text/javascript" src="./Raspberry Pi • View topic - How to detect shutdown_files/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+
+	jQuery("time.entry-date").timeago();
+	jQuery("time.date").timeago();
+  
+	jQuery('iframe').each( function() {
+		var url = jQuery(this).attr("src")
+		jQuery(this).attr("src",url+"&wmode=transparent")
+	});
+
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46270871-1', 'raspberrypi.org');
+  ga('send', 'pageview');
+
+</script>
+	
+
+</body></html>
