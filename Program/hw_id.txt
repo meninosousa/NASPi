@@ -1,0 +1,7 @@
+Backup1:
+by-label: BACKUP1
+by-id: usb-WD_Elements_10B8_575835314133345939333833-0:0-part1
+
+Backup2:
+by-label: BACKUP2
+by-id: usb-WD_Elements_10B8_575837314541334B4D4C3938-0:0-part1
