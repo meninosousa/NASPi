@@ -110,7 +110,11 @@ def main():
             elif switch == 1:
                 if getSwitch() == switch:
                     print('option 1')
-#TESTTTTT4
+                    startSomething()
+                    os.system('mount /dev/sdc1 /mnt/USBDRIVE/')
+                    os.system('cp -R /mnt/USBDRIVE/ /mnt/BACKUP1/fromusb/')
+                    os.system('umount /mnt/USBDRIVE/')
+                    endSomething()
                 onYellow()
             elif switch == 2:
                 if getSwitch() == switch:
@@ -123,12 +127,16 @@ def main():
             elif switch == 3:
                 if getSwitch() == switch:
                     print('option 3')
+                    startSomething()
                     os.system('git -C /home/odroid/Documents/NASPi/ pull')
+                    endSomething()
                 onYellow()
             elif switch == 4:
                 if getSwitch() == switch:
                     print('option 4')
+                    startSomething()
                     os.system('df -h > /mnt/BACKUP1/diskspace.txt')
+                    endSomething()
                 onYellow()
             elif switch == 5:
                 if getSwitch() == switch:
