@@ -113,8 +113,8 @@ def main():
                 onYellow()
             elif switch == 2:
                 if getSwitch() == switch:
-    				print('option 2')
-				    print('Time backup the backup')
+                    print('option 2')
+                    print('Time backup the backup')
                     startSomething()
                     os.system('rsync -arv --delete /mnt/BACKUP1/ /mnt/BACKUP2/')
                     endSomething()
@@ -122,7 +122,8 @@ def main():
             elif switch == 3:
                 if getSwitch() == switch:
                     print('option 3')
-				onYellow()
+                     
+                onYellow()
             elif switch == 4:
                 if getSwitch() == switch:
                     print('option 4')
@@ -137,7 +138,7 @@ def main():
                     os.system('sudo apt-get -y upgrade')
                     os.system('sudo apt-get -y dist-upgrade')
                     endSomething()
-				onYellow()
+                onYellow()
             elif switch == 6:
                 if getSwitch() == switch:
                     print('option 6')
