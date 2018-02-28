@@ -110,7 +110,7 @@ def main():
             elif switch == 1:
                 if getSwitch() == switch:
                     print('option 1')
-#TESTTTTT
+#TESTTTTT2
                 onYellow()
             elif switch == 2:
                 if getSwitch() == switch:
