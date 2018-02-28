@@ -100,7 +100,7 @@ def main():
             allLeds()
             time.sleep(1)
             resetLeds()
-            print('option selected: ' + str(switch))
+#            print('option selected: ' + str(switch))
             switch = getSwitch()
             ledsBlink()
             if switch == 0:
@@ -112,7 +112,7 @@ def main():
                     print('option 1')
                     startSomething()
                     os.system('mount /dev/sdc1 /mnt/USBDRIVE/')
-                    os.system('cp -R /mnt/USBDRIVE/ /mnt/BACKUP1/fromusb/')
+                    os.system('cp -R /mnt/USBDRIVE/ /mnt/BACKUP1/_fromusb/')
                     os.system('umount /mnt/USBDRIVE/')
                     endSomething()
                 onYellow()
@@ -135,7 +135,7 @@ def main():
                 if getSwitch() == switch:
                     print('option 4')
                     startSomething()
-                    os.system('df -h > /mnt/BACKUP1/diskspace.txt')
+                    os.system('df -h > /mnt/BACKUP1/_diskspace.txt')
                     endSomething()
                 onYellow()
             elif switch == 5:
