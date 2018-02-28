@@ -123,7 +123,7 @@ def main():
             elif switch == 3:
                 if getSwitch() == switch:
                     print('option 3')
-                     
+                    os.system('git -C /home/odroid/Documents/NASPi/ pull')
                 onYellow()
             elif switch == 4:
                 if getSwitch() == switch:
