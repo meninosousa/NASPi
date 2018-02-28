@@ -101,8 +101,9 @@ def main():
             time.sleep(1)
             resetLeds()
 #            print('option selected: ' + str(switch))
-            switch = getSwitch()
             ledsBlink()
+            switch = getSwitch()
+            time.sleep(1)
             if switch == 0:
                 print('undo option')
                 onYellow()
